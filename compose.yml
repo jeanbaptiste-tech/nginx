@@ -1,0 +1,20 @@
+# Environnement dev nginx
+services:
+  nginx:
+    build: ./front
+    ports:
+      - '8000:80'
+
+    volumes:
+      - ./front/app:/usr/share/nginx/html
+    environment:
+      - USER=toto
+      - PASSWORD=123456
+
+#   - type: volume
+#   source: mes_datas
+#   target: /usr/share/nginx/html
+
+volumes:
+  mes_datas:
+
