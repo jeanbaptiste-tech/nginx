@@ -2,14 +2,14 @@
 services:
   nginx:
     build: ./front
-    ports:
+    ports: 
       - '8000:80'
 
     volumes:
       - ./front/app:/usr/share/nginx/html
     environment:
       - USER=toto
-      - PASSWORD=123456
+      - MYSQL_PASSEWORD=${PASSEWORD}
 
 #   - type: volume
 #   source: mes_datas
